@@ -1,0 +1,61 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Bwl.Storage.UniversalORM.Firebird
+</name>
+</assembly>
+<members>
+<member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.ResourceManager">
+	<summary>
+  Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.Culture">
+	<summary>
+  Перезаписывает свойство CurrentUICulture текущего потока для всех
+  обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.AddBigIntColumn">
+	<summary>
+  Ищет локализованную строку, похожую на ALTER TABLE {0} ADD "{1}" bigint .
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.AddFloatColumn">
+	<summary>
+  Ищет локализованную строку, похожую на ALTER TABLE {0} ADD "{1}" float.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.AddIntColumn">
+	<summary>
+  Ищет локализованную строку, похожую на ALTER TABLE {0} ADD "{1}" integer.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.AddStringColumn">
+	<summary>
+  Ищет локализованную строку, похожую на ALTER TABLE {0} ADD "{1}" varchar({2})  .
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateMainTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на CREATE TABLE {0}
+(
+    guid varchar(38) NOT NULL,
+    type varchar(5000) ,
+    json BLOB SUB_TYPE 1,                                                                                CONSTRAINT PK_{0} PRIMARY KEY
+(
+    guid
+)
+).
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.UpdateIndexSQL">
+	<summary>
+  Ищет локализованную строку, похожую на UPDATE {0} SET "{1}" = {3}
+     WHERE guid = '{2}'.
+</summary>
+</member><member name="T:Bwl.Storage.UniversalORM.My.Resources.Resources">
+	<summary>
+  Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+</summary>
+</member><member name="M:Bwl.Storage.UniversalORM.FbUtils.GetObjectList(System.String,System.String,FirebirdSql.Data.FirebirdClient.FbParameter[])">
+	<summary>
+ Выполняет SQL запрос и возвращает его результаты в виде списка, содержащего список полей объектов
+ </summary>
+</member>
+</members>
+</doc>

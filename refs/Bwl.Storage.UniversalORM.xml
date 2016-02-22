@@ -1,0 +1,172 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Bwl.Storage.UniversalORM
+</name>
+</assembly>
+<members>
+<member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.ResourceManager">
+	<summary>
+  Возвращает кэшированный экземпляр ResourceManager, использованный этим классом.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.Culture">
+	<summary>
+  Перезаписывает свойство CurrentUICulture текущего потока для всех
+  обращений к ресурсу с помощью этого класса ресурса со строгой типизацией.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateBigIntIndexTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[{0}](
+	[guid] [nchar](38) NOT NULL,
+	[value] [bigint] NOT NULL,
+ CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
+(
+	[guid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+CREATE NONCLUSTERED INDEX [IX_{0}] ON [dbo].[{0}]
+(
+	[value] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DRO [остаток строки не уместился]";.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateFloatIndexTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[{0}](
+	[guid] [nchar](38) NOT NULL,
+	[value] [float] NOT NULL,
+ CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
+(
+	[guid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+CREATE NONCLUSTERED INDEX [IX_{0}] ON [dbo].[{0}]
+(
+	[value] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP [остаток строки не уместился]";.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateIntIndexTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[{0}](
+	[guid] [nchar](38) NOT NULL,
+	[value] [int] NOT NULL,
+ CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
+(
+	[guid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+CREATE NONCLUSTERED INDEX [IX_{0}] ON [dbo].[{0}]
+(
+	[value] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = OFF, DROP_E [остаток строки не уместился]";.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateMainTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[{0}](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[guid] [nchar](38) NOT NULL,
+	[type] [nvarchar](max) NULL,
+	[json] [nvarchar](max) NULL,
+ CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
+(
+	[guid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+CREATE UNIQUE NONCLUSTERED INDEX [IX_{0}] ON [dbo].[{0 [остаток строки не уместился]";.
+</summary>
+</member><member name="P:Bwl.Storage.UniversalORM.My.Resources.Resources.CreateStringIndexTableSQL">
+	<summary>
+  Ищет локализованную строку, похожую на SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[{0}](
+	[guid] [nchar](38) NOT NULL,
+	[value] [nvarchar]({2}) NOT NULL,
+ CONSTRAINT [PK_{0}] PRIMARY KEY CLUSTERED 
+(
+	[guid] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+CREATE NONCLUSTERED INDEX [IX_{0}] ON [dbo].[{0}]
+(
+	[value] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, SORT_IN_TEMPDB = O [остаток строки не уместился]";.
+</summary>
+</member><member name="T:Bwl.Storage.UniversalORM.My.Resources.Resources">
+	<summary>
+  Класс ресурса со строгой типизацией для поиска локализованных строк и т.д.
+</summary>
+</member><member name="M:Bwl.Storage.UniversalORM.LocalStorage.#ctor(Bwl.Storage.UniversalORM.IObjStorageManager,Bwl.Storage.UniversalORM.IBlobFieldsWriter,Bwl.Storage.UniversalORM.IBinaryConverter[])">
+	<summary>
+ Локальное хранилище объектов в JSON + BLOB.
+ </summary>
+	<param name="storageManager">Менеджер хранилищ JSON описания.</param>
+	<param name="blobSaver">Модуль для хранения BLOB данных.</param>
+	<param name="blobStremSavers">Преобразователи BLOB данных в потоки.</param>
+	<remarks></remarks>
+</member><member name="T:Bwl.Storage.UniversalORM.LocalStorage">
+	<summary>
+ Локальное хранилище объектов в JSON + BLOB.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Bwl.Storage.UniversalORM.ILocalStorage.AddObjects(Bwl.Storage.UniversalORM.ObjBase[],System.Type)">
+	<summary>Добоавление объектов одинакового типа в хранилище.</summary>
+</member><member name="F:Bwl.Storage.UniversalORM.CommonObjStorage._indexingMembers">
+	<summary>Описание индексируемых полей.</summary>
+</member><member name="T:Bwl.Storage.UniversalORM.BlobFieldsSet">
+	<summary>
+ Данные всех BLOB полей в объекте.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Bwl.Storage.UniversalORM.IBlobFieldsWriter">
+	<summary>
+ Модуль для сохранения/загрузки потоков в реальное хранилище (файл, БД и т.д.)
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Bwl.Storage.UniversalORM.IBinaryConverter">
+	<summary>
+ Преобразователь типа данных в массив байтов и обратно.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Bwl.Storage.UniversalORM.BlobFiledsStorage.LoadBlobs(System.Object,System.String)">
+	<summary>
+ Загружает в BLOB поля объекта их значения. 
+ </summary>
+	<param name="parentObject"></param>
+	<param name="parentId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Bwl.Storage.UniversalORM.BlobFiledsStorage.SaveBlobs(System.Object,System.String)">
+	<summary>
+ Сохраняет значения BLOB полей объекта в хранилище.
+ </summary>
+	<param name="parentObject"></param>
+	<param name="parentId"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="T:Bwl.Storage.UniversalORM.BlobField">
+	<summary>
+ Данные одного поля.
+ </summary>
+	<remarks></remarks>
+</member><member name="T:Bwl.Storage.UniversalORM.BlobAttribute">
+	<summary> Если нужно не вносить в сериализацию, то надо использовать соответствующие атрибуты, отменяющие сериализацию поля </summary>
+</member><member name="M:Bwl.Storage.UniversalORM.MSSQLSRVUtils.GetObjectList(System.String,System.String,System.Data.SqlClient.SqlParameter[])">
+	<summary>
+ Выполняет SQL запрос и возвращает его результаты в виде списка, содержащего список полей объектов
+ </summary>
+</member>
+</members>
+</doc>
